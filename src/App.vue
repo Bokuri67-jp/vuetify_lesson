@@ -1,6 +1,11 @@
 <template>
   <v-app>
-
+    <v-app-bar color="primary" dark app>
+      <v-toolbar-title>Vuetify</v-toolbar-title>
+    </v-app-bar>
+    <v-footer color="primary" dark app>
+      Vuetify
+    </v-footer>
   </v-app>
 </template>
 
@@ -8,5 +13,5 @@
 
 export default {
 
-};
+}
 </script>
