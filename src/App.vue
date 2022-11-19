@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-navigation-drawer app>Navigation Lists</v-navigation-drawer>
-    <v-app-bar color="primary" dark app>
+    <v-navigation-drawer app v-model="drawer" clipped>Navigation Lists</v-navigation-drawer>
+    <v-app-bar color="primary" dark app clipped-left>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify</v-toolbar-title>
     </v-app-bar>
