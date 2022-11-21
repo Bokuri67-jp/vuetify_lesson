@@ -9,29 +9,44 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
         <v-divider></v-divider>
-        <v-list dense nav>
-          <v-list-item v-for="nav_list in nav_lists" :key="nav_list.name">
-            <v-list-item-icon>
-              <v-icon>{{nav_list.icon}}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>{{nav_list.name}}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+
+        <v-list nav dense>
+          <v-list-group
+            v-for="nav_list in nav_lists"
+            :key="nav_list.name"
+            :prepend-icon="nav_list.icon"
+            no-action
+            :append-icon="nav_list.lists ? undefined : ''">
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title>{{nav_list.name}}</v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item v-for="list in nav_list.lists" :key="list">
+              <v-list-item-contents>
+                <v-list-item-title>{{list}}</v-list-item-title>
+              </v-list-item-contents>
+            </v-list-item>
+          </v-list-group>
         </v-list>
       </v-container>
     </v-navigation-drawer>
+
     <v-app-bar color="primary" dark app clipped-left>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify</v-toolbar-title>
+
       <v-spacer></v-spacer>
+
       <v-toolbar-items>
         <v-btn text>For Enterprise</v-btn>
         <v-menu offset-y>
           <template v-slot:activator="{on}">
             <v-btn text v-on="on">Support<v-icon>mdi-menu-down</v-icon></v-btn>
           </template>
+
           <v-list>
             <v-subheader>Get help</v-subheader>
             <v-list-item v-for="support in supports" :key="support.name">
@@ -48,8 +63,10 @@
         </v-menu>
       </v-toolbar-items>
     </v-app-bar>
+
     <v-main>
     </v-main>
+
     <v-footer color="primary" dark app>
       Vuetify
     </v-footer>
@@ -70,12 +87,33 @@ export default {
         { name: 'Stack overview', icon: 'mdi-stack-overflow' }
       ],
       nav_lists: [
-        { name: 'Getting Started', icon: 'mdi-vuetify' },
-        { name: 'Customization', icon: 'mdi-cogs' },
-        { name: 'Styles & animations', icon: 'mdi-palette' },
-        { name: 'UI Components', icon: 'mdi-view-dashboard' },
-        { name: 'Directives', icon: 'mdi-function' },
-        { name: 'Premium themes', icon: 'mdi-vuetify' }
+        {
+          name: 'Getting Started',
+          icon: 'mdi-vuetify',
+          lists: ['Quick Start', 'Pre-mode layouts']
+        },
+        {
+          name: 'Customization',
+          icon: 'mdi-cogs'
+        },
+        {
+          name: 'Styles & animations',
+          icon: 'mdi-palette',
+          lists: ['Colors', 'Content', 'Display']
+        },
+        {
+          name: 'UI Components',
+          icon: 'mdi-view-dashboard',
+          lists: ['API explorer', 'Alerts']
+        },
+        {
+          name: 'Directives',
+          icon: 'mdi-function'
+        },
+        {
+          name: 'Premium themes',
+          icon: 'mdi-vuetify'
+        }
       ]
     }
   }
