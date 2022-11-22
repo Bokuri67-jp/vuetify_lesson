@@ -9,9 +9,7 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
         <v-divider></v-divider>
-
         <v-list nav dense>
           <v-list-group
             v-for="nav_list in nav_lists"
@@ -37,11 +35,9 @@
     <v-app-bar color="primary" dark app clipped-left>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify</v-toolbar-title>
-
       <v-spacer></v-spacer>
-
       <v-toolbar-items>
-        <v-btn text>For Enterprise</v-btn>
+        <v-btn text to="/enterprise">For Enterprise</v-btn>
         <v-menu offset-y>
           <template v-slot:activator="{on}">
             <v-btn text v-on="on">Support<v-icon>mdi-menu-down</v-icon></v-btn>
@@ -49,7 +45,7 @@
 
           <v-list>
             <v-subheader>Get help</v-subheader>
-            <v-list-item v-for="support in supports" :key="support.name">
+            <v-list-item v-for="support in supports" :key="support.name" :to="support.link">
               <v-list-item-content>
                 <v-list-item-title>
                   <v-list-item-icon>
@@ -65,6 +61,7 @@
     </v-app-bar>
 
     <v-main>
+      <router-view/>
     </v-main>
 
     <v-footer color="primary" dark app>
@@ -80,39 +77,93 @@ export default {
     return {
       drawer: null,
       supports: [
-        { name: 'Consulting and support', icon: 'mdi-vuetify' },
-        { name: 'Discord community', icon: 'mdi-controller' },
-        { name: 'Report a bug', icon: 'mdi-bug' },
-        { name: 'Github issue board', icon: 'mdi-github' },
-        { name: 'Stack overview', icon: 'mdi-stack-overflow' }
+        {
+          name: 'Consulting and support',
+          icon: 'mdi-vuetify',
+          link: '/consulting-and-support'
+        },
+        {
+          name: 'Discord community',
+          icon: 'mdi-controller',
+          link: '/discord-community'
+        },
+        {
+          name: 'Report a bug',
+          icon: 'mdi-bug',
+          link: 'report-a-bug'
+        },
+        {
+          name: 'Github issue board',
+          icon: 'mdi-github',
+          link: 'github-issue-board'
+        },
+        {
+          name: 'Stack overview',
+          icon: 'mdi-stack-overflow',
+          link: 'stack-overview'
+        }
       ],
       nav_lists: [
         {
           name: 'Getting Started',
           icon: 'mdi-vuetify',
-          lists: ['Quick Start', 'Pre-mode layouts']
+          lists: [
+            {
+              name: 'Quick Start',
+              link: '/quick-start'
+            },
+            {
+              name: 'Pre-mode layouts',
+              link: '/pre-mode-layouts'
+            }
+          ]
         },
         {
           name: 'Customization',
-          icon: 'mdi-cogs'
+          icon: 'mdi-cogs',
+          link: '/customization'
         },
         {
           name: 'Styles & animations',
           icon: 'mdi-palette',
-          lists: ['Colors', 'Content', 'Display']
+          lists: [
+            {
+              name: 'Colors',
+              link: '/colors'
+            },
+            {
+              name: 'Content',
+              link: '/content'
+            },
+            {
+              name: 'Display',
+              link: '/display'
+            }
+          ]
         },
         {
           name: 'UI Components',
           icon: 'mdi-view-dashboard',
-          lists: ['API explorer', 'Alerts']
+          lists: [
+            {
+              name: 'API explorer',
+              link: '/api-explorer'
+            },
+            {
+              name: 'Alerts',
+              link: '/alerts'
+            }
+          ]
         },
         {
           name: 'Directives',
-          icon: 'mdi-function'
+          icon: 'mdi-function',
+          link: '/directives'
         },
         {
           name: 'Premium themes',
-          icon: 'mdi-vuetify'
+          icon: 'mdi-vuetify',
+          link: '/premium-themes'
         }
       ]
     }
