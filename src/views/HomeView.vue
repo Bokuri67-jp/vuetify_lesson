@@ -1,15 +1,14 @@
 <template>
-  <hello-world />
+  <SaleGraph />
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import SaleGraph from '../components/SaleGraph'
 
 export default {
-  name: 'Home',
-
+  name: 'SaleGraph',
   components: {
-    HelloWorld
+    SaleGraph
   }
 }
 </script>
