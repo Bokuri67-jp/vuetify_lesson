@@ -61,7 +61,40 @@
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <v-container>
+        <v-row>
+          <v-col cols="12">
+            <router-view/>
+          </v-col>
+          <v-col cols="6">
+            <router-view/>
+          </v-col>
+          <v-col cols="6">
+            <router-view/>
+          </v-col>
+          <v-col cols="4">
+            <router-view/>
+          </v-col>
+          <v-col cols="4">
+            <router-view/>
+          </v-col>
+          <v-col cols="4">
+            <router-view/>
+          </v-col>
+          <v-col cols="3">
+            <router-view/>
+          </v-col>
+          <v-col cols="3">
+            <router-view/>
+          </v-col>
+          <v-col cols="3">
+            <router-view/>
+          </v-col>
+          <v-col cols="3">
+            <router-view/>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
 
     <v-footer color="primary" dark app>
