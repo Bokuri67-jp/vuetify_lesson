@@ -22,9 +22,9 @@
                 <v-list-item-title>{{nav_list.name}}</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item v-for="list in nav_list.lists" :key="list">
+            <v-list-item v-for="list in nav_list.lists" :key="list.name" :to="list.link">
               <v-list-item-contents>
-                <v-list-item-title>{{list}}</v-list-item-title>
+                  <v-list-item-title>{{list.name}}</v-list-item-title>
               </v-list-item-contents>
             </v-list-item>
           </v-list-group>
@@ -63,41 +63,31 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col cols="1">
+          <v-col cols="4">
             <router-view/>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="4">
             <router-view/>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="4">
             <router-view/>
           </v-col>
-          <v-col cols="1">
-            <router-view/>
+        </v-row>
+      </v-container>
+      <v-divider></v-divider>
+      <v-container>
+        <v-row>
+          <v-col cols="12" sm="6" md="4" lg="3">
+            <router-view />
           </v-col>
-          <v-col cols="1">
-            <router-view/>
+          <v-col cols="12" sm="6" md="4" lg="3">
+            <router-view />
           </v-col>
-          <v-col cols="1">
-            <router-view/>
+          <v-col cols="12" sm="6" md="4" lg="3">
+            <router-view />
           </v-col>
-          <v-col cols="1">
-            <router-view/>
-          </v-col>
-          <v-col cols="1">
-            <router-view/>
-          </v-col>
-          <v-col cols="1">
-            <router-view/>
-          </v-col>
-          <v-col cols="1">
-            <router-view/>
-          </v-col>
-          <v-col cols="1">
-            <router-view/>
-          </v-col>
-          <v-col cols="1">
-            <router-view/>
+          <v-col cols="12" sm="6" md="4" lg="3">
+            <router-view />
           </v-col>
         </v-row>
       </v-container>
