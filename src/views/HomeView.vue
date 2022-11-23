@@ -1,14 +1,16 @@
 <template>
-  <hello-world />
+  <SaleGraph />
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import SaleGraph from '../components/SaleGraph'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  component: {
+    SaleGraph
+  },
+  mounted () {
+    console.log(this.$vuetify.breakpoint.name)
   }
 }
 </script>

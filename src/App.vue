@@ -64,13 +64,13 @@
       <v-container>
         <v-row>
           <v-col cols="4">
-            <router-view/>
+            <SaleGraph/>
           </v-col>
           <v-col cols="4">
-            <router-view/>
+            <SaleGraph/>
           </v-col>
           <v-col cols="4">
-            <router-view/>
+            <SaleGraph/>
           </v-col>
         </v-row>
       </v-container>
@@ -78,16 +78,16 @@
       <v-container>
         <v-row>
           <v-col cols="12" sm="6" md="4" lg="3">
-            <router-view />
+            <SaleGraph/>
           </v-col>
           <v-col cols="12" sm="6" md="4" lg="3">
-            <router-view />
+            <SaleGraph/>
           </v-col>
           <v-col cols="12" sm="6" md="4" lg="3">
-            <router-view />
+            <SaleGraph/>
           </v-col>
           <v-col cols="12" sm="6" md="4" lg="3">
-            <router-view />
+            <SaleGraph/>
           </v-col>
         </v-row>
       </v-container>
@@ -96,12 +96,14 @@
     <v-footer color="primary" dark app>
       Vuetify
     </v-footer>
-  </v-app>
+</v-app>
 </template>
 
 <script>
+import SaleGraph from './components/SaleGraph'
 
 export default {
+  components: { SaleGraph },
   data () {
     return {
       drawer: null,
