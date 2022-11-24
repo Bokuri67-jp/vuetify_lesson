@@ -107,6 +107,19 @@ export default {
   data () {
     return {
       drawer: null,
+      headers: [
+        {
+          text: 'Dessert (100g serving)',
+          align: 'start',
+          sortable: false,
+          value: 'name'
+        },
+        { text: 'Calories', value: 'calories' },
+        { text: 'Fat (g)', value: 'fat' },
+        { text: 'Carbs (g)', value: 'carbs' },
+        { text: 'Protein (g)', value: 'protein' },
+        { text: 'Iron (%)', value: 'iron' }
+      ],
       supports: [
         {
           name: 'Consulting and support',
@@ -121,17 +134,17 @@ export default {
         {
           name: 'Report a bug',
           icon: 'mdi-bug',
-          link: 'report-a-bug'
+          link: '/report-a-bug'
         },
         {
           name: 'Github issue board',
           icon: 'mdi-github',
-          link: 'github-issue-board'
+          link: '/github-issue-board'
         },
         {
           name: 'Stack overview',
           icon: 'mdi-stack-overflow',
-          link: 'stack-overview'
+          link: '/stack-overview'
         }
       ],
       nav_lists: [
@@ -195,6 +208,16 @@ export default {
           name: 'Premium themes',
           icon: 'mdi-vuetify',
           link: '/premium-themes'
+        },
+        {
+          name: 'Table',
+          icon: 'mdi-file-table',
+          lists: [
+            {
+              name: 'Desserts',
+              link: '/desserts'
+            }
+          ]
         }
       ]
     }

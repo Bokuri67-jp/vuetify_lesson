@@ -1,16 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-// import SaleGraph from '../components/SaleGraph.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'SaleGraph',
-  //   component: SaleGraph
-  // },
   {
     path: '/',
     name: 'home',
@@ -28,6 +22,11 @@ const routes = [
     path: '/enterprise',
     name: 'enterprise',
     component: () => import('../components/Enterprise.vue')
+  },
+  {
+    path: '/desserts',
+    name: 'desserts',
+    component: () => import('../components/Desserts.vue')
   }
 ]
 
