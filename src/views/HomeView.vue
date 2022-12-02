@@ -1,16 +1,16 @@
 <template>
-  <SaleGraph />
+  <div class="home">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
-import SaleGraph from '../components/SaleGraph'
-
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
 export default {
-  component: {
-    SaleGraph
-  },
-  mounted () {
-    console.log(this.$vuetify.breakpoint.name)
+  name: 'HomeView',
+  components: {
+    HelloWorld
   }
 }
 </script>

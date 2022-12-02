@@ -20,6 +20,7 @@
       <div class="display-1 font-weight-thick">Sales</div>
     </v-card-text>
   </v-card>
+
 </template>
 
 <script>

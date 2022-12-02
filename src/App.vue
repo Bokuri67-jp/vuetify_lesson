@@ -61,36 +61,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container>
-        <v-row>
-          <v-col cols="4">
-            <SaleGraph/>
-          </v-col>
-          <v-col cols="4">
-            <SaleGraph/>
-          </v-col>
-          <v-col cols="4">
-            <SaleGraph/>
-          </v-col>
-        </v-row>
-      </v-container>
-      <v-divider></v-divider>
-      <v-container>
-        <v-row>
-          <v-col cols="12" sm="6" md="4" lg="3">
-            <SaleGraph/>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3">
-            <SaleGraph/>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3">
-            <SaleGraph/>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3">
-            <SaleGraph/>
-          </v-col>
-        </v-row>
-      </v-container>
+      <router-view />
     </v-main>
 
     <v-footer color="primary" dark app>
@@ -100,10 +71,10 @@
 </template>
 
 <script>
-import SaleGraph from './components/SaleGraph'
+// import SaleGraph from './components/SaleGraph'
 
 export default {
-  components: { SaleGraph },
+  // components: { SaleGraph },
   data () {
     return {
       drawer: null,
@@ -196,6 +167,10 @@ export default {
             {
               name: 'Alerts',
               link: '/alerts'
+            },
+            {
+              name: 'SaleGraph',
+              link: '/salegraph'
             }
           ]
         },

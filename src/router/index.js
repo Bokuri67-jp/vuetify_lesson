@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-export default new VueRouter({
+export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -30,6 +30,11 @@ export default new VueRouter({
       path: '/desserts',
       name: 'desserts',
       component: () => import('../components/Desserts.vue')
+    },
+    {
+      path: '/salegraph',
+      name: 'salegraph',
+      component: () => import('../components/SaleGraph.vue')
     }
   ]
 })
