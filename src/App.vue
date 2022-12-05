@@ -120,6 +120,16 @@ export default {
       ],
       nav_lists: [
         {
+          name: 'Resume',
+          icon: '',
+          lists: [
+            {
+              name: 'ResumeTable',
+              link: '/ResumeTable'
+            }
+          ]
+        },
+        {
           name: 'Getting Started',
           icon: 'mdi-vuetify',
           lists: [
