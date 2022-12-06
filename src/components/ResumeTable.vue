@@ -11,11 +11,9 @@
 
         <v-col>
           <v-card>
-            <v-img>
               <v-card-title>title</v-card-title>
               <v-subheader>subheader</v-subheader>
               <v-card-subtitle>subtitle</v-card-subtitle>
-            </v-img>
           </v-card>
         </v-col>
     </v-row>
