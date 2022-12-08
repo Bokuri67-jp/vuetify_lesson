@@ -37,9 +37,14 @@ export default new Router({
       component: () => import('../components/SaleGraph.vue')
     },
     {
-      path: '/resumetable',
-      name: 'resumetable',
-      component: () => import('../components/ResumeTable.vue')
+      path: '/resume',
+      name: 'resume',
+      component: () => import('../views/Resume.vue')
+    },
+    {
+      path: '/resumesummary',
+      name: 'resumesummary',
+      component: () => import('../components/ResumeSummary.vue')
     }
   ]
 })

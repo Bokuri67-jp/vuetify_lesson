@@ -124,8 +124,8 @@ export default {
           icon: '',
           lists: [
             {
-              name: 'ResumeTable',
-              link: '/ResumeTable'
+              name: 'Resume',
+              link: '/Resume'
             }
           ]
         },
